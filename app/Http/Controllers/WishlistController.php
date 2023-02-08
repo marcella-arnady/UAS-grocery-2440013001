@@ -6,6 +6,7 @@ use App\Models\Wishlist;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Product;
 
 class WishlistController extends Controller
 {
@@ -14,6 +15,7 @@ class WishlistController extends Controller
         return view('wishlist', compact('wishlists'));
     }
 
+
     public function add_to_wishlist(Request $request){
         Wishlist::create([
             'user_id' => $request->user_id,
@@ -21,7 +23,7 @@ class WishlistController extends Controller
         ]);
 
         echo "<script>
-                alert('Successfully add product to your wishlist!');
+                alert('Successfully add product to your cart!');
                 window.location.href='/wishlist';
                </script>";
 
@@ -32,7 +34,17 @@ class WishlistController extends Controller
         $wishlist->delete();
 
         echo "<script>
-                alert('Successfully delete product on your wishlist!');
+                alert('Successfully delete product on your cart');
+                window.location.href='/wishlist';
+               </script>";
+    }
+
+    public function buy_wishlist(Request $request){
+        $wishlist = Wishlist::find($request->wishlist_id);
+        $wishlist->delete();
+
+        echo "<script>
+                alert('Successfully buy product on your cart');
                 window.location.href='/wishlist';
                </script>";
     }

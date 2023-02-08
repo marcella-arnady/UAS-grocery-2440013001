@@ -16,122 +16,110 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert(
             [
-              'name' => 'Keranjang Laundry Rotan / Keranjang Anyaman Rotan / Basket Rotan KR02 - Size S',
-              'detail' => 'Keranjang pakaian terbuat dari anyaman rotan untuk menampung pakaian dan membuat ruangan terlihat teratur.',
-              'price' => 130000,
-              'photo' => 'keranjang.jpg',
-              'category_id' => 2,
+              'name' => 'Lettuce',
+              'detail' => 'Crunchy texture and unbeatable freshness for your everyday needs.',
+              'price' => 43700,
+              'photo' => 'lettuce.jpg',
             ]
         );
 
         DB::table('products')->insert(
             [
-                'name' => 'Mangkok Eceng Gondok / Wadah Anyaman Eceng Gondok KG22',
-                'detail' => 'Keranjang Buah Anyaman ini dibuat untuk para penyuka home decor yang sedang tren, bisa juga untuk keranjang buah agar lebih terlihat menarik dan menambah kesan cantik di meja makan',
-                'price' => 66000,
-                'photo' => 'mangkok.jpg',
-                'category_id' => 2,
+                'name' => 'Mixed Salad',
+                'detail' => 'All of your favorite types of leaves, combined. Your hassle-free option, ready to go.',
+                'price' => 23000,
+                'photo' => 'salad.jpg',
             ]
         );
 
         DB::table('products')->insert(
             [
-                'name' => 'Rumah Kucing Rotan / Kandang Kucing / Tempat Tidur Kucing RKC01',
-                'detail' => 'Tempat tidur kucing estetik yang terbuat dari bahan alami berupa rotan pilihan yang sudah dikeringkan.',
-                'price' => 356000,
-                'photo' => 'kandangkucing.jpg',
-                'category_id' => 2,
+                'name' => 'Celery Stick',
+                'detail' => 'Mildly bitter, celery sticks have a crunchy texture with a hint of saltiness.',
+                'price' => 35000,
+                'photo' => 'celer.jpg',
             ]
         );
 
         DB::table('products')->insert(
             [
-                'name'=>'Tampah Bambu Kotak / Nampan Bambu Kotak / Tampah Tumpeng KOTAK - 30 x 30 cm',
-                'detail' => 'Tampah Bambu Kotak Terbuat dari anyaman bambu pilihan yang sudah dibersihkan dan dianyam oleh pengrajin terampil.',
-                'price'=> 28500,
-                'photo' => 'tampah.jpg',
-                'category_id'=> 3,
+                'name'=>'Kale',
+                'detail' => 'Kale has crunchy leaves with strong flavors. The leaves are larger and crisp.',
+                'price'=> 15700,
+                'photo' => 'kale.jpg',
             ]
         );
 
         DB::table('products')->insert(
             [
-                'name'=>'Kap Lampu Rotan Gantung / Kap Lampu Cafe / Cup Lampu Rotan CLR02 - Model 6',
-                'detail' => 'Kap lampu rotan terbuat dari anyaman rotan agar ruangan terlihat lebih minimalis dengan kesan alam untuk menambah kehangatan di tengah keluarga.',
+                'name'=>'Rib Eye Steak 900g',
+                'detail' => 'Many steak lovers say that this is the cut with the most flavour. We find it hard to choose, but we can guarantee a great steak that has been aged for at least 14 days and sourced from Grade A beef. 3 Steaks in a pack',
                 'price'=> 145000,
-                'photo' => 'lampu.jpg',
-                'category_id'=> 2,
+                'photo' => 'ribeye.jpg',
             ]
         );
 
 
         DB::table('products')->insert(
             [
-                'name'=>'Kotak Tissue Kayu Jati / Kotak Tisu Jati / Tempat Tisu Kayu Jati KTJ01',
-                'detail' => 'Kotak tissue kayu jati berbentuk persegi yang dibuat langsung oleh tangan pengrajin lokal yang terampil untuk memperindah ruangan.',
-                'price'=> 120000,
-                'photo' => 'tisu.jpg',
-                'category_id'=> 1,
+                'name'=>'Mix Salanova',
+                'detail' => 'High in iron, this vegetable is mild and slightly sweet, making it a versatile ingredient for your everyday cooking.',
+                'price'=> 17500,
+                'photo' => 'power.jpg',
             ]
         );
 
         DB::table('products')->insert(
             [
-                'name'=>'Baki Kayu Jati / Nampan Kayu Jati / Tray Kayu Kotak NJ08',
-                'detail' => 'Baki kayu jati terbuat dari kayu jati yang sudah dihaluskan dan memiliki serat kayu yang eksotis dan elegan.',
-                'price'=> 86000,
-                'photo' => 'baki.jpg',
-                'category_id'=> 1,
+                'name'=>'Power Salad - Ready 2 Eat',
+                'detail' => 'High in iron, this vegetable is mild and slightly sweet, making it a versatile ingredient for your everyday cooking.',
+                'price'=> 32500,
+                'photo' => 'power.jpg',
             ]
         );
 
         DB::table('products')->insert(
             [
-                'name'=>'Talenan Kayu / Talenan Kayu Jati / Talenan Persegi Gagang T06',
-                'detail' => 'Talenan kayu jati terbut dari kayu jati yang dikeringkan dan dihaluskan permukaannya, serta memiliki serat kayu yang eksotis dan elegan',
+                'name'=>'Hamburgers',
+                'detail' => 'If you don’t want the hassle of making your own burgers, let us do it for you. Thousands of satisfied Grillhouse and Gourmet Garage patrons can’t be wrong! We have adapted our restaurant burgers to a smaller home size (100g) but with the same great taste. 8 burgers per pack',
                 'price'=> 46000,
-                'photo' => 'talenan.jpg',
-                'category_id'=> 1,
+                'photo' => 'burger.jpg',
             ]
         );
 
         DB::table('products')->insert(
             [
-                'name'=>'Keranjang Bambu / Kotak Bambu / Anyaman Bambu Persegi - S',
-                'detail' => 'Keranjang bambu persegi terbuat dari anyaman bambu berkualitas untuk membuat rumah terlihat rapi dan estetik.',
-                'price'=> 20500,
-                'photo' => 'keranjangpersegis.jpg',
-                'category_id'=> 3,
+                'name'=>'Oxtail',
+                'detail' => 'Perfect for a hearty winter meal and great when accompanied by a good bottle of red wine, our oxtail is cut from A Grade oxtail',
+                'price'=> 150500,
+                'photo' => 'oxtail.jpg',
             ]
         );
 
         DB::table('products')->insert(
             [
-                'name'=>'Keranjang Dimsum Bambu / Klakat Bambu',
-                'detail' => 'Wadah yang terbuat dari bambu untuk mengukus dimsum dan mendekor meja makan.',
-                'price'=> 19500,
-                'photo' => 'dimsum.jpg',
-                'category_id'=> 3,
+                'name'=>'Alaska Fresh Salmon',
+                'detail' => 'Newly catched fresh fish',
+                'price'=> 110500,
+                'photo' => 'salmon.jpg',
             ]
         );
 
         DB::table('products')->insert(
             [
-                'name'=>'Rak Bambu / Rak Bumbu Dapur Susun / Anyaman Bambu Rotan / Rak Bawang',
-                'detail' => 'Wadah yang terbuat dari bambu untuk menaruh bawang atau bumbu dapur agar menghemat tempat di dapur.',
-                'price'=> 179500,
-                'photo' => 'bawang.jpg',
-                'category_id'=> 3,
+                'name'=>'T-Bone Steak',
+                'detail' => 'The instantly recognisable T-bone is for people with serious appetites! Consisting of a sirloin and fillet steak separated by a T shaped bone, this cut is known in Italy as a Bistecca Fiorentina.  2 in a pack.',
+                'price'=> 199100,
+                'photo' => 'tbone.jpg',
             ]
         );
 
         DB::table('products')->insert(
             [
-              'name' => 'Alat Penggaruk Punggung Kayu S M L',
-              'detail' => 'Alat penggaruk punggung terbuat dari kayu panjang 40cm, nyaman digunakan, sudah di-finishing oleh para pengrajin.',
-              'price' => 17500,
-              'photo' => 'penggaruk.jpg',
-              'category_id' => 1,
+              'name' => 'Sage',
+              'detail' => 'Not only a great ingredient to enhance flavors, sage is also rich in anti-inflammatory and antioxidant and is widely used as medicine.',
+              'price' => 14500,
+              'photo' => 'sage.jpg',
             ]
         );
 

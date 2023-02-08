@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ URL::asset('css/home.css') }}" />
-    <title>Fortune100</title>
-    <link rel = "icon" href="https://i.ibb.co/z8fQKBt/logo.png" type = "image/x-icon">
+    <title>Amazing E-Grocery</title>
+    <link rel = "icon" href="https://cdn-icons-png.flaticon.com/512/3649/3649552.png" type = "image/x-icon">
     </head>
 </html>
 

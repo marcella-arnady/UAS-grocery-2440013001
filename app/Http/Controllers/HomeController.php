@@ -12,12 +12,14 @@ use Mail;
 class HomeController extends Controller
 {
     public function index(){
-        $categories = Category::with('products')->get();
-        return view('home', compact('categories'));
+        return view ('index');
     }
 
-    public function about_us(){
-        return view('about');
+    public function home(){
+        $products = DB::table('products')->paginate(10);
+        return view('home', ['products'=>$products]);
+
+        
     }
 
     public function contact_us(){

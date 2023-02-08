@@ -6,12 +6,9 @@
     <div class="card-header text-kuning">
         @php
             if($products[0]->category_id == '1'){
-                $category_name = 'Kayu';
+                $category_name = 'Vegetable';
             } elseif($products[0]->category_id == '2'){
-                $category_name = 'Rotan';
-            } else {
-                $category_name = 'Bambu';
-            }
+                $category_name = 'Meat & Fish';
         @endphp
         {{$category_name}}
     </div>
@@ -24,7 +21,7 @@
                 <div class="card-body">
                     <p class="card-title text-truncate">{{ $product->name }}</p>
                     <p class="card-text"><strong>IDR {{ $product->price }}</strong></p>
-                    <a class="text-white btn btn-block bg-kuning" href="/detail/{{$product->id}}">Lihat</a>
+                    <a class="text-white btn btn-block bg-kuning" href="/detail/{{$product->id}}">Detail</a>
                 </div>
             </div>
         </div>

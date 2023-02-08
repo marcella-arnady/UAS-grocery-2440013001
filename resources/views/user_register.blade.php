@@ -10,10 +10,19 @@
     @endif
     <form action="{{route('register_logic')}}" method="POST" enctype="multipart/form-data">
         @csrf
-        <h2 class="text-center">Daftar</h2>
+        <h2 class="text-center">Register</h2>
         <div class="form-group">
-            <label for="">Nama</label>
-            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Ketik Nama Disini" required>
+            <label for="">First Name</label>
+            <input type="text" name="first_name" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Name" required>
+            @error('name')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="">Last Name</label>
+            <input type="text" name="last_name" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Name" required>
             @error('name')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -22,7 +31,7 @@
         </div>
         <div class="form-group">
             <label for="">Email</label>
-            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Ketik Email Disini" required>
+            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Enter Email" required>
             @error('email')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -31,7 +40,7 @@
         </div>
         <div class="form-group">
             <label for="">Password</label>
-            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Ketik Password Disini">
+            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Enter Password">
             @error('password')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -39,38 +48,40 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="">Konfirmasi Password</label>
-            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="current-password" placeholder="Ketik Ulang Password Disini">
+            <label for="">Confirm Password</label>
+            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="current-password" placeholder="Re-enter Password">
         </div>
         <div class="form-group">
-            <label for="">Jenis Kelamin</label>
+            <label for="">Gender</label>
             <div class="custom-control custom-radio">
                 <input type="radio" id="male" name="gender" class="custom-control-input" value="male" required>
-                <label class="custom-control-label" for="male">Pria</label>
+                <label class="custom-control-label" for="male">Male</label>
               </div>
               <div class="custom-control custom-radio">
                 <input type="radio" id="female" name="gender" class="custom-control-input" value="female" required>
-                <label class="custom-control-label" for="female">Wanita</label>
+                <label class="custom-control-label" for="female">Female</label>
               </div>
         </div>
         <div class="form-group">
-            <label for="inputCountry">Negara</label>
-            <select id="inputCountry" name="country" class="form-control" required>
-              <option selected value="indonesia">Pilih Negara</option>
-              <option value="indonesia">Indonesia</option>
-              <option value="japan">Japan</option>
-              <option value="singapore">Singapore</option>
-              <option value="malaysia">Malaysia</option>
-              <option value="laos">Laos</option>
+            <label for="inputRole">Role</label>
+            <select id="inputRole" name="role" class="form-control" required>
+              <option value="registered">User</option>
+              <option value="administrator">Admin</option>
             </select>
           </div>
+
+          <div class="form-group">
+              <label for="photo">Profile Picture</label>
+              <input type="file" class="form-control" id="photo" name="photo" />
+            </div>
+
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Daftar</button>
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
         </div>
     </form>
     <p class="text-center">
-       Sudah memiliki akun?
-        <a href="{{route('login_user')}}"><u>Masuk disini</u></a>
+       Have account?
+        <a href="{{route('login_user')}}"><u>Login here</u></a>
     </p>
 </div>
 

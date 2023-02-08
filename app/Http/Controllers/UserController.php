@@ -54,15 +54,15 @@ class UserController extends Controller
 
                 if($user != null){
                     auth()->login($user, true);
-                    return redirect()->route('home');
+                    return redirect()->route('index');
                 }else{
                     $create = User::Create([
                         'email'             => $user_google->getEmail(),
-                        'name'              => $user_google->getName(),
+                        'first_name'              => $user_google->getName(),
+                        'last_name'              => $user_google->getName(),
                         'password'          => 0,
                         'role'              => 'registered',
                         'gender'            => 'male',
-                        'country'           => 'indonesia',
                         'email_verified_at' => now(),
                     ]);
 
@@ -81,30 +81,38 @@ class UserController extends Controller
     public function logout_logic(){
         Auth::logout();
         Cookie::queue(Cookie::forget('user'));
-        return redirect()->route('login_user');
+        return redirect()->route('index');
     }
 
     public function register_logic(Request $request){
         $request->validate([
-            'name' => 'required|min:5',
+            'first_name' => 'required|max:25',
+            'last_name' => 'required|max:25',
             'email' => 'required|unique:users,email',
             'password' => 'required|alpha_num|confirmed|min:8',
             'gender' => 'required',
-            'country' => 'required'
+            'role' => 'required',
+            'photo' => 'image|mimes:jpeg,jpg,png'
         ]);
+
+        $original_name = $request->file('photo')->getClientOriginalName();
+        $original_ext = $request->file('photo')->getClientOriginalExtension();
+        $profile_filename = $original_name . '_' . time() . '.' . $original_ext;
+        $request->file('photo')->storeAs('public/images', $profile_filename);
 
         DB::table('users')->insert([
-            'name' => $request->name,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'registered',
+            'role' => $request->role,
             'gender' => $request->gender,
-            'country' => $request->country
+            'photo' => $profile_filename
         ]);
 
-        $request->session()->flash('message', 'Successfully Register your Account. Please Login using Email and Password');
+        $request->session()->flash('message', 'Successfully registered your account. Please Login using Email and Password');
         echo "<script>
-                alert('Successfully Register your Account. Please Login using Email and Password!');
+                alert('Successfully registered your account. Please Login using Email and Password!');
                 window.location.href='/login';
                </script>";
         // return redirect()->route('login_user');

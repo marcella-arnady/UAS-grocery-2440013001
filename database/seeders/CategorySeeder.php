@@ -15,15 +15,12 @@ class CategorySeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'name'=>'Kayu'
+            'name'=>'Vegetable'
         ]);
 
         DB::table('categories')->insert([
-            'name'=>'Rotan'
+            'name'=>'Meat & Fish'
         ]);
 
-        DB::table('categories')->insert([
-            'name'=>'Bambu'
-        ]);
     }
 }

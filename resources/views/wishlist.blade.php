@@ -1,6 +1,7 @@
 @extends('navbar')
 
 @section('content')
+@if ( auth()->check() )
 @if (count($wishlists) < 1)
     <h4 class="p-5 text-center"><strong>Tidak ada produk di Wishlist</strong></h4>
 @else
@@ -19,7 +20,7 @@
             </div>
             <div class="align-items-center align-content-center col-md-3 border-left mt-1">
                 <div class="d-flex flex-column d-grid gap-2 mt-2" data-toggle="buttons">
-                    <a class="btn btn-outline-success" href="https://www.tokopedia.com/fortune100"><i class="fa fa-shopping-cart" > Beli Sekarang </i></a>
+                   
                     <form action={{route('delete_wishlist')}} method="POST" class="d-flex flex-column mt-2">
                         @csrf
                         @method("DELETE")
@@ -34,5 +35,27 @@
 
 </div>
 </div>
+
+
+<div class="container mb-2">
+<div class="d-flex justify-content-center row">
+    <div class="col-md-10 p-5">
+        
+    <form action={{route('buy_wishlist')}} method="POST" class="d-flex flex-column mt-2">
+                            @csrf
+                            @method("DELETE")
+                    
+                            <input type="hidden" name="wishlist_id" value="{{$wishlist->id}}">
+<button  type="submit" data-toggle="tooltip" class="btn btn-primary btn-lg float-right">Purchase</button>
+
+</form>
+</div>
+</div>
+</div>
+
+
+@endif
+@else
+<script>window.location = "/";</script>
 @endif
 @endsection
